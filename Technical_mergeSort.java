@@ -4,25 +4,32 @@ public class Technical_mergeSort {
 
     public static void main(String[] args) {
 
-        int[] nums1 = { 4, 1, 3, 2, 6, 5 };
-        int[] nums2 = { 2, 6, 5 };
-        int m = 3;
-        int n = 3;
+        int[] nums1 = { 4, 1, 3, 2, 7, 5 };
+        int[] nums2 = { 9, 6, 8 };
+        int m = nums1.length;
+        int n = nums2.length;
 
         System.out.println("merge arrays: " + Arrays.toString(nums1));
-    //    nums1 = merge(nums1, m, nums2, n);
-        sort(nums1, m, n);
+        int[] result = merge(nums1, m, nums2, n);
+        
+        System.out.println("sort arrays: " + Arrays.toString(nums1));
+        sort(result, m, n);
     }
 
     // methods
     public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
 
-        for (int i = 0; i < n; i++) {
-            nums1[i + m] = nums2[i];
+        int[] nums3 = new int[m + n];
 
+        for (int i = 0; i < m; i++) {
+            nums3[i] = nums1[i];
         }
-        // System.out.println(Arrays.toString(nums1));
-        return nums1;
+
+        for (int j = 0; j < n; j++) {
+            nums3[j + m] = nums2[j];
+        }
+
+        return nums3;
     }
 
     public static void sort(int[] nums1, int m, int n) {
@@ -38,7 +45,6 @@ public class Technical_mergeSort {
             }
 
         }
-        
 
         System.out.println("Sorted array: " + Arrays.toString(nums1));
     }
