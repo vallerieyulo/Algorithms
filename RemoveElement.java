@@ -18,9 +18,9 @@ public class RemoveElement {
             if (nums[i] != val) {
                 expectedNums[index++] = nums[i];
             }   
-            // }else {
-            //     index++;
-            // }
+            else {
+                index++;
+            }
         }
 
         System.out.println("Removed values: " + Arrays.toString(expectedNums));
