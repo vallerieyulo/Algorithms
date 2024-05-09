@@ -37,7 +37,7 @@ public class Palindrome {
         //System.out.println("Clean: " + cleanedPhrase);
         
         for (int i = cleanedPhrase.length() - 1; i >= 0; i--) {
-            reversed += cleanedPhrase.charAt(i);
+            reversed += cleanedPhrase.charAt(i); 
         }
 
         return reversed;
